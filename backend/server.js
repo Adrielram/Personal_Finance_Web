@@ -10,6 +10,7 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use(cors()); // Enable CORS for all origins (adjust for production)
 app.use(express.json()); // Parse JSON request bodies
+app.use(express.static(path.join(__dirname, '../frontend'))); // Serve static files from frontend directory
 
 // Database setup
 const dbPath = path.resolve(__dirname, '..', process.env.DATABASE_PATH || 'database/finance.db');
